@@ -1,7 +1,3 @@
-set python=%cd%\build_tools\Python27
+call config.bat
 set path=%python%;%python%\Scripts;%path%
-
- 
-cd ..
-
 make html

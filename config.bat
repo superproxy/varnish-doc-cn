@@ -1,0 +1,1 @@
+set python=%cd%\build_tools\Python27
