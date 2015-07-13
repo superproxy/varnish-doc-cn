@@ -1,0 +1,81 @@
+%%%%%%%%%%%%
+获取帮助
+%%%%%%%%%%%%
+
+联系Varnish团队是非常简单的，在时间允许的条件下我们尽可能的帮助并尽可能的简化这个过程。
+
+但是在你联系我们之前，你花一点时间写下你的想法和制定你的问题。
+从我们的观察来看，如果只是告诉我们"Varnish does not work for
+me"而且没有更多的信息是没有任何意义的。 没有告诉我们任何让我们发现哪里出错的信息
+
+在你告诉我们之前，做下检查看看你的问世是否已经回答过了。
+如果已经回答过了，你得到答案肯定比联系我们更快。
+
+IRC频道
+===========
+最直接的方式联系我们的方式是加入我们的IRC频道。
+
+	`#varnish 在irc.linpro.no服务器上`
+
+频道主要时区是欧洲的工作时间。
+
+如果你用少量清晰的句子阐述问题，没有太多的复制和粘贴，IRC是一个获取帮助的好方式。
+如果你需要粘贴大的日志文件、VCL配置文件等等，请使用patebin_服务。
+如果这个频道很安静，过一段时间重试。我们也有生活、家庭和工作去处理。
+
+如果你只是闲逛，我们更欢迎。我们不介意偶尔的打扰,我们尽力保证总是这个话题，请不要随便粘贴一个连接，除非*相当的*壮观或者很有智慧的（高大上）
+
+邮件列表
+=============
+
+可以通过mailman_来订阅或者退订我们的邮件列表。
+
+如果你打算使用Varnish,订阅我们的`varnish-announce`邮件列表是个不错的注意。
+典型的情形是人们花费了时间使varnish运行，然后或多或少的忘记了怎么弄得了。 
+因此"announce"邮件列表是一个非常好的方式用来提醒最新的发布版本、故障、安全问题。
+
+`varnish-misc`邮件列表一般用来闲聊、问题、建议以及想法等等。如果你是个新手，需要付费订阅，可以学到一些技巧
+这个也是个用来求助复杂问题的好地方。如这些问题需要很多文件，设计到很多文件或者很长的解释。
+
+确定选择了一个好的主题，如果这个主题所在的板块改变了，请修改主题以适应板块。
+每天我们中有人除了垃圾邮件，还要处理成百的电子邮件，因此我们需要一个我们可以能挑一个有趣话题的帮助。
+
+`varnish-dev`邮件列表主要供开发者使用,一般专注于源代码等。每一个在`-dev`邮件列表的上也会在`-misc`邮件列表上。
+所以跨版发表只是烦那些人。
+
+我们也维护一个交流的
+wiki_,在这你可以发现计划、会议、当前为未完成的任务、故障单、资源和文档链接等信息。
+
+.. XXX: we should introduce the wiki (if we care about it) before
+.. we start referring to it (below). Make a wiki chapter?
+
+故障单
+===============
+
+不要创建一个新的故障单，除非你发现了一个新的Varnish的故障。 如果你不能确定，首先在IRC上问问。
+
+这个政策的原因是避免故障被其他`issues`、特性发布的特性建议、帮助忘记检查已有故障单的人重复提交请求所淹没。
+
+.. XXX: Not sure what you want with the last sentence above. benc
+
+在`"Shopping-List" wiki page`_上，我们不跟踪建议、功能想法以及通过邮件和IRC的用户支持
+
+
+商业支持
+==================
+
+下面的公司提供商业的Varnish支持，为了你的方便如下列出。
+如果你希望你的公司列在这，发送邮件到phk@FreeBSD.org.
+
+.. XXX: Should we perhaps enhance this to explain Varnish Plus? benc
+
+	Varnish Software
+	sales@varnish-software.com
+
+	UPLEX
+	info@uplex.de
+
+.. _mailman: http://lists.varnish-cache.org/mailman/listinfo
+.. _pastebin: http://gist.github.com/
+.. _"Shopping-List" wiki page: http://varnish-cache.org/wiki/PostTwoShoppingList
+.. _wiki: https://www.varnish-cache.org/trac   

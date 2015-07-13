@@ -1,0 +1,52 @@
+
+特定平台相关注意事项
+------------------------
+
+在一些平台上，有必要在运行Varnish之前调整操作系统。本节将讲述我们所知的系统和其调整步骤
+
+
+Redhat Enterprise Linux 6的透明大页
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+在RHEL6,内核默认支持透明大页。这已知的问题会使Varnish不定时的崩溃。
+
+所以推荐在受影响的系统上关闭透明大页。可以这样做：
+实时生效
+``echo "never" > /sys/kernel/mm/redhat_transparent_hugepage/enabled`` 
+永久生效
+`/etc/sysctl.conf` 
+
+在内核3.2的Debian/Ubuntu系统上，透明大页的默认之是"madvise"，这个不需要修改。
+
+OpenVZ
+~~~~~~
+
+运行Varnish在虚拟的硬件上是可以的，但是在高性能的情况下不推荐。
+缩水的磁盘和网络性能会降低性能很多，所以要确保你的系统有好的IO性能。
+
+如果运行在64为的OpenVZ(或者 Paralles VPS)上，启动Varnish之前你必须减少最大栈的大小.
+默认分配了过多的内存给每个线程,随着线程的数量增加会使Varnish宕机。
+
+在启动Varnish之前，在初始化脚本中，添加减少最大栈大小的命令``ulimit -s 256``。
+
+TCP保持活动配置
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+在一下Solaris、FressBSD和OS
+X系统上，Varnish不能设置每一个soket的TCP保持活动参数，因此Varnish的运行参数*tcp_keepalive_*不可用。
+在这些系统上，Varnish可以工作的更好,通过调宽系统的值可以更容易检测那先在等待表中花费了很长时间的远程关闭回话。
+这个可以让资源释放的更快一下。
+
+下面的系统不支持每个socket的TCP保持活动的参数
+- SolarisV11之前的版本
+- FreeBSD V9.1之前的版本
+- OS X Mountain Lion之前的版本
+
+在系统中，必要的socket选择的默认值设置为：
+- `tcp_keepalive_time` = 600 seconds
+- `tcp_keepalive_probes` = 5
+- `tcp_keepalive_intvl` = 5 seconds
+
+注意Varnish只接受低于系统默认值的运行参数。
+
+.. XXX:一个简单的使用、设置、改变这些值的命令？benc
