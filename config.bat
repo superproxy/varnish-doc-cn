@@ -1,1 +1,1 @@
-set python=%cd%\build_tools\Python27
+set python=c:\Python27
